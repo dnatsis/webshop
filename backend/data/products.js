@@ -1,6 +1,5 @@
 const products = [
   {
-    _id: '1',
     name: 'Dodonis Feta Cheese',
     image: '/images/feta.jpg',
     description: 'High quality sheep milk Feta',
@@ -12,7 +11,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: '2',
     name: 'Kaseri Cheese',
     image: '/images/kaseri.jpg',
     description: 'High quality sheeps milk Kaseri Cheese',
@@ -24,7 +22,6 @@ const products = [
     numReviews: 8,
   },
   {
-    _id: '3',
     name: 'Hummus',
     image: '/images/hummus.jpg',
     description: 'Classic hummus dip with roasted red peppers',
@@ -36,7 +33,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: '4',
     name: 'Olive Oil',
     image: '/images/oliveoil.jpg',
     description: 'Kalamata Olive Oil from Kalamata, Greece',
@@ -48,7 +44,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: '5',
     name: 'Olives',
     image: '/images/Olives.jpg',
     description: 'Kalamata olives from Kalamata, Greece',
@@ -60,7 +55,6 @@ const products = [
     numReviews: 10,
   },
   {
-    _id: '6',
     name: 'Pita Bread',
     image: '/images/pita.jpg',
     description: 'Freshly baked pita bread',
