@@ -17,10 +17,7 @@ import {
   listProductDetails,
   createProductReview,
 } from '../actions/productActions';
-import {
-  PRODUCT_CREATE_REVIEW_FAIL,
-  PRODUCT_CREATE_REVIEW_RESET,
-} from '../constants/productConstants';
+import { PRODUCT_CREATE_REVIEW_RESET } from '../constants/productConstants';
 
 const ProductScreen = ({ history, match }) => {
   const [qty, setQty] = useState(1);
