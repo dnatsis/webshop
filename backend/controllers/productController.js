@@ -29,27 +29,10 @@ const getProducts = asyncHandler(async (req, res) => {
 // @route    Get /api/products/category/:name
 // @access    Public
 const getFilteredProducts = asyncHandler(async (req, res) => {
-  const products = await Product.find();
+  const query = { category: req.params.name };
+  const products = await Product.find(query);
 
-  var reducedProducts = products.reduce(function (filtered, product) {
-    if (product.category === req.params.name) {
-      var someNewValue = {
-        name: product.name,
-        image: product.image,
-        description: product.description,
-        brand: product.brand,
-        category: product.category,
-        price: product.price,
-        countInStock: product.countInStock,
-        rating: product.rating,
-        numReviews: product.numReviews,
-      };
-      filtered.push(someNewValue);
-    }
-    return filtered;
-  }, []);
-
-  res.json(reducedProducts);
+  res.json(products);
 });
 
 // @desc    Fetch single product

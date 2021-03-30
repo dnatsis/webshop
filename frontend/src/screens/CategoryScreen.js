@@ -17,7 +17,7 @@ const CategoryScreen = ({ match }) => {
 
   useEffect(() => {
     dispatch(listFilteredProducts(name));
-  }, [dispatch]);
+  }, [dispatch, name]);
 
   return (
     <>
