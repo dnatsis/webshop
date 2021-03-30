@@ -51,11 +51,15 @@ export const listProducts = (keyword = '', pageNumber = '') => async (
   }
 };
 
-export const listFilteredProducts = (name) => async (dispatch) => {
+export const listFilteredProducts = (name, pageNumber = '') => async (
+  dispatch
+) => {
   try {
     dispatch({ type: PRODUCT_FILTERED_LIST_REQUEST });
 
-    const { data } = await axios.get(`/api/products/category/${name}`);
+    const { data } = await axios.get(
+      `/api/products/category/${name}?pageNumber=${pageNumber}`
+    );
 
     dispatch({
       type: PRODUCT_FILTERED_LIST_SUCCESS,

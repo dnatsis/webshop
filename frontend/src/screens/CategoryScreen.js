@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Row, Col } from 'react-bootstrap';
 import Product from '../components/Product';
+import Paginate from '../components/Paginate';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
 import { listFilteredProducts } from '../actions/productActions';
@@ -12,12 +13,14 @@ const CategoryScreen = ({ match }) => {
 
   const name = match.params.name;
 
+  const pageNumber = match.params.pageNumber || 1;
+
   const productFilteredList = useSelector((state) => state.productFilteredList);
-  const { loading, products, error } = productFilteredList;
+  const { loading, products, error, page, pages } = productFilteredList;
 
   useEffect(() => {
-    dispatch(listFilteredProducts(name));
-  }, [dispatch, name]);
+    dispatch(listFilteredProducts(name, pageNumber));
+  }, [dispatch, name, pageNumber]);
 
   return (
     <>
@@ -38,6 +41,7 @@ const CategoryScreen = ({ match }) => {
               </Col>
             ))}
           </Row>
+          <Paginate pages={pages} page={page} name={name} isCategory={true} />
         </>
       )}
     </>

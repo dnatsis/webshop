@@ -29,10 +29,17 @@ const getProducts = asyncHandler(async (req, res) => {
 // @route    Get /api/products/category/:name
 // @access    Public
 const getFilteredProducts = asyncHandler(async (req, res) => {
-  const query = { category: req.params.name };
-  const products = await Product.find(query);
+  const pageSize = 1;
+  const page = Number(req.query.pageNumber) || 1;
 
-  res.json(products);
+  const query = { category: req.params.name };
+  const count = await Product.countDocuments(query);
+  const products = await Product.find(query)
+    .limit(pageSize)
+    .skip(pageSize * (page - 1));
+
+  console.log(count);
+  res.json({ products, page, pages: Math.ceil(count / pageSize) });
 });
 
 // @desc    Fetch single product

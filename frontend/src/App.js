@@ -36,6 +36,11 @@ function App() {
             exact
           />
           <Route path="/categories" component={CategoriesScreen} exact />
+          <Route
+            path="/categories/:name/page/:pageNumber"
+            component={CategoryScreen}
+            exact
+          />
           <Route path="/categories/:name" component={CategoryScreen} exact />
           <Route path="/placeorder" component={PlaceOrderScreen} />
           <Route path="/login" component={LoginScreen} />

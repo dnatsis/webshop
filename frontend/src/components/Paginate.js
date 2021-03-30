@@ -8,6 +8,8 @@ const Paginate = ({
   isAdmin = false,
   keyword = '',
   isCategories = false,
+  name = '',
+  isCategory = false,
 }) => {
   return (
     pages > 1 && (
@@ -16,7 +18,9 @@ const Paginate = ({
           <LinkContainer
             key={x + 1}
             to={
-              isCategories
+              isCategory
+                ? `/categories/${name}/page/${x + 1}`
+                : isCategories
                 ? `/categories/page/${x + 1}`
                 : !isAdmin
                 ? keyword
