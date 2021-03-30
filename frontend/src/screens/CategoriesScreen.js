@@ -3,19 +3,22 @@ import { Row, Col } from 'react-bootstrap';
 import { listCategories } from '../actions/categoryActions';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import Paginate from '../components/Paginate';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
 import Category from '../components/Category';
 
-const CategoriesScreen = () => {
+const CategoriesScreen = ({ match }) => {
+  const pageNumber = match.params.pageNumber || 1;
+
   const dispatch = useDispatch();
 
   const categoryList = useSelector((state) => state.categoryList);
-  const { loading, categories, error } = categoryList;
+  const { loading, categories, error, pages, page } = categoryList;
 
   useEffect(() => {
-    dispatch(listCategories());
-  }, [dispatch]);
+    dispatch(listCategories(pageNumber));
+  }, [dispatch, pageNumber]);
 
   return (
     <>
@@ -36,6 +39,7 @@ const CategoriesScreen = () => {
               </Col>
             ))}
           </Row>
+          <Paginate pages={pages} page={page} isCategories={true} />
         </>
       )}
     </>

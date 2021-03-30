@@ -5,11 +5,13 @@ import {
   CATEGORY_LIST_SUCCESS,
 } from '../constants/categoryConstants';
 
-export const listCategories = () => async (dispatch) => {
+export const listCategories = (pageNumber = '') => async (dispatch) => {
   try {
     dispatch({ type: CATEGORY_LIST_REQUEST });
 
-    const { data } = await axios.get('/api/categories');
+    const { data } = await axios.get(
+      `/api/categories?pageNumber=${pageNumber}`
+    );
 
     dispatch({ type: CATEGORY_LIST_SUCCESS, payload: data });
   } catch (error) {

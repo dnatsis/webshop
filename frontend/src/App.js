@@ -30,8 +30,13 @@ function App() {
           <Route path="/order/:id" component={OrderScreen} />
           <Route path="/shipping" component={ShippingScreen} />
           <Route path="/payment" component={PaymentScreen} />
+          <Route
+            path="/categories/page/:pageNumber"
+            component={CategoriesScreen}
+            exact
+          />
           <Route path="/categories" component={CategoriesScreen} exact />
-          <Route path="/categories/:name" component={CategoryScreen} />
+          <Route path="/categories/:name" component={CategoryScreen} exact />
           <Route path="/placeorder" component={PlaceOrderScreen} />
           <Route path="/login" component={LoginScreen} />
           <Route path="/register" component={RegisterScreen} />
