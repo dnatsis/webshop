@@ -10,11 +10,13 @@ import { listFilteredProducts } from '../actions/productActions';
 const CategoryScreen = ({ match }) => {
   const dispatch = useDispatch();
 
+  const name = match.params.name;
+
   const productFilteredList = useSelector((state) => state.productFilteredList);
   const { loading, products, error } = productFilteredList;
 
   useEffect(() => {
-    dispatch(listFilteredProducts());
+    dispatch(listFilteredProducts(name));
   }, [dispatch]);
 
   return (

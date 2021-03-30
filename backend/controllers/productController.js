@@ -26,7 +26,7 @@ const getProducts = asyncHandler(async (req, res) => {
 });
 
 // @desc    Fetch all products and filter by category name
-// @route    Get /api/products/category
+// @route    Get /api/products/category/:name
 // @access    Public
 const getFilteredProducts = asyncHandler(async (req, res) => {
   const products = await Product.find();
