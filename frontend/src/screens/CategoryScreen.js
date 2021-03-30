@@ -5,34 +5,16 @@ import { Row, Col } from 'react-bootstrap';
 import Product from '../components/Product';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
-import { listProducts } from '../actions/productActions';
+import { listFilteredProducts } from '../actions/productActions';
 
 const CategoryScreen = ({ match }) => {
   const dispatch = useDispatch();
 
-  const productList = useSelector((state) => state.productList);
-  const { loading, products, error } = productList;
-
-  var reducedProducts = products.reduce(function (filtered, product) {
-    if (product.category === match.params.name) {
-      var someNewValue = {
-        name: product.name,
-        image: product.image,
-        description: product.description,
-        brand: product.brand,
-        category: product.category,
-        price: product.price,
-        countInStock: product.countInStock,
-        rating: product.rating,
-        numReviews: product.numReviews,
-      };
-      filtered.push(someNewValue);
-    }
-    return filtered;
-  }, []);
+  const productFilteredList = useSelector((state) => state.productFilteredList);
+  const { loading, products, error } = productFilteredList;
 
   useEffect(() => {
-    dispatch(listProducts());
+    dispatch(listFilteredProducts());
   }, [dispatch]);
 
   return (
@@ -48,7 +30,7 @@ const CategoryScreen = ({ match }) => {
       ) : (
         <>
           <Row>
-            {reducedProducts.map((product, index) => (
+            {products.map((product, index) => (
               <Col key={index} sm={12} md={6} lg={4} xl={3}>
                 <Product product={product} />
               </Col>

@@ -21,6 +21,9 @@ import {
   PRODUCT_TOP_REQUEST,
   PRODUCT_TOP_SUCCESS,
   PRODUCT_TOP_FAIL,
+  PRODUCT_FILTERED_LIST_REQUEST,
+  PRODUCT_FILTERED_LIST_SUCCESS,
+  PRODUCT_FILTERED_LIST_FAIL,
 } from '../constants/productConstants';
 
 export const listProducts = (keyword = '', pageNumber = '') => async (
@@ -40,6 +43,27 @@ export const listProducts = (keyword = '', pageNumber = '') => async (
   } catch (error) {
     dispatch({
       type: PRODUCT_LIST_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+  }
+};
+
+export const listFilteredProducts = () => async (dispatch) => {
+  try {
+    dispatch({ type: PRODUCT_FILTERED_LIST_REQUEST });
+
+    const { data } = await axios.get(`/api/products/category`);
+
+    dispatch({
+      type: PRODUCT_FILTERED_LIST_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: PRODUCT_FILTERED_LIST_FAIL,
       payload:
         error.response && error.response.data.message
           ? error.response.data.message

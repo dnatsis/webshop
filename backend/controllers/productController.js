@@ -25,6 +25,33 @@ const getProducts = asyncHandler(async (req, res) => {
   res.json({ products, page, pages: Math.ceil(count / pageSize) });
 });
 
+// @desc    Fetch all products and filter by category name
+// @route    Get /api/products/category
+// @access    Public
+const getFilteredProducts = asyncHandler(async (req, res) => {
+  const products = await Product.find();
+
+  var reducedProducts = products.reduce(function (filtered, product) {
+    if (product.category === req.params.name) {
+      var someNewValue = {
+        name: product.name,
+        image: product.image,
+        description: product.description,
+        brand: product.brand,
+        category: product.category,
+        price: product.price,
+        countInStock: product.countInStock,
+        rating: product.rating,
+        numReviews: product.numReviews,
+      };
+      filtered.push(someNewValue);
+    }
+    return filtered;
+  }, []);
+
+  res.json(reducedProducts);
+});
+
 // @desc    Fetch single product
 // @route    Get /api/products/:id
 // @access    Public
@@ -165,4 +192,5 @@ export {
   updateProduct,
   createProductReview,
   getTopProducts,
+  getFilteredProducts,
 };
