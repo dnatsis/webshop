@@ -8,6 +8,7 @@ const Paginate = ({
   isAdmin = false,
   keyword = '',
   isCategories = false,
+  isCategoriesAndAdmin = false,
   name = '',
   isCategory = false,
 }) => {
@@ -22,6 +23,8 @@ const Paginate = ({
                 ? `/categories/${name}/page/${x + 1}`
                 : isCategories
                 ? `/categories/page/${x + 1}`
+                : isCategoriesAndAdmin
+                ? `/admin/categorylist/${x + 1}`
                 : !isAdmin
                 ? keyword
                   ? `/search/${keyword}/page/${x + 1}`
