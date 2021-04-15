@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { listCategories } from '../actions/categoryActions';
 import { Form, Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../components/Message';
@@ -26,6 +27,9 @@ const ProductEditScreen = ({ match, history }) => {
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
 
+  const categoryList = useSelector((state) => state.categoryList);
+  const { loading: loadingCategories, categories } = categoryList;
+
   const productUpdate = useSelector((state) => state.productUpdate);
   const {
     loading: loadingUpdate,
@@ -34,6 +38,7 @@ const ProductEditScreen = ({ match, history }) => {
   } = productUpdate;
 
   useEffect(() => {
+    dispatch(listCategories());
     if (successUpdate) {
       dispatch({ type: PRODUCT_UPDATE_RESET });
       history.push('/admin/productlist');
@@ -166,11 +171,16 @@ const ProductEditScreen = ({ match, history }) => {
             <Form.Group controlId="category">
               <Form.Label>Category</Form.Label>
               <Form.Control
-                type="text"
-                placeholder="Enter category"
+                as="select"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-              ></Form.Control>
+              >
+                {categories.map((category) => (
+                  <option key={category._id} value={category.name}>
+                    {category.name}
+                  </option>
+                ))}
+              </Form.Control>
             </Form.Group>
 
             <Form.Group controlId="description">
