@@ -1,6 +1,12 @@
 import React from 'react';
 import { Spinner } from 'react-bootstrap';
 
+/**
+ * A Component using a boostrap spinner to use when part of the application is loading
+ *
+ * @Component
+ * @returns {Bootstrap:Spinner} a Bootstrap spinner used when part of the application is loading
+ */
 const Loader = () => {
   return (
     <Spinner

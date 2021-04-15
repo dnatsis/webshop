@@ -6,12 +6,32 @@ import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import SearchBox from './SearchBox';
 import { logout } from '../actions/userActions';
 
+/**
+ * Navbar Component using bootstrap
+ *
+ * @Component
+ * @returns Bootstrap Navbar with LinkContainers for each link
+ */
+
 const Header = () => {
   const dispatch = useDispatch();
 
+  /**
+   * Retrieve userLogin from Redux state
+   * @param {state} state.userLogin gets the userLogin state from redux global state
+   * @return {state} userLogin state from redux into a const name userLogin
+   */
+
   const userLogin = useSelector((state) => state.userLogin);
+  /**
+   * destructure userInfo from userLogin state retrieved from redux
+   */
   const { userInfo } = userLogin;
 
+  /**
+   * A function that logs the user out when it is clicked
+   * @return {dispatch} dispatches the logout actions which logs a userout
+   */
   const logoutHandler = () => {
     dispatch(logout());
   };

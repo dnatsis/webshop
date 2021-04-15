@@ -2,6 +2,17 @@ import React from 'react';
 import { Nav } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
+/**
+ * Component for showing which step of the chechout process the user is at
+ *
+ * @component
+ * @param {propType} step1 step1 of the checkout process, signing in
+ * @param {propType} step2 step2 of the checkout process, entering shipping information
+ * @param {propType} step3 step3 of the checkout process, payment
+ * @param {propType} step4 step4 of the checkout process, placing order
+ * @returns {Bootstrap:Nav} returns a bootstrap nav item for each step of the checkout process that is passed into the component
+ */
+
 const CheckoutSteps = ({ step1, step2, step3, step4 }) => {
   return (
     <Nav className="justify-content-center mb-4">

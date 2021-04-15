@@ -2,6 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card } from 'react-bootstrap';
 
+/**
+ * Component for showing an individual category
+ * @Component
+ * @param {propType} category A category prop that is fetched from the backend
+ * @returns {Bootstrap:Card} returns a bootstrap card Component for whatever category is passed in
+ */
+
 const Category = ({ category }) => {
   return (
     <Card className="my-3 p-3 rounded">

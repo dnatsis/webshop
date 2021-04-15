@@ -28,7 +28,7 @@ const ProductEditScreen = ({ match, history }) => {
   const { loading, error, product } = productDetails;
 
   const categoryList = useSelector((state) => state.categoryList);
-  const { loading: loadingCategories, categories } = categoryList;
+  const { categories } = categoryList;
 
   const productUpdate = useSelector((state) => state.productUpdate);
   const {

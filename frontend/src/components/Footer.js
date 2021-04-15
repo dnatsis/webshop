@@ -1,6 +1,11 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
+/**
+ * Component for displaying the footer of the web application
+ * @returns copyright footer at the bottom of the web applications.
+ */
+
 const Footer = () => {
   return (
     <footer>
