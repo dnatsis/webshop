@@ -33,4 +33,19 @@ const createCategory = asyncHandler(async (req, res) => {
   res.status(201).json(createdCategory);
 });
 
-export { getCategories, createCategory };
+// @desc    Delete a Category
+// @route    DELETE /api/categories/:id
+// @access    Private/Admin
+const deleteCategory = asyncHandler(async (req, res) => {
+  const category = await Category.findById(req.params.id);
+
+  if (category) {
+    await category.remove();
+    res.json({ message: 'Category removed' });
+  } else {
+    res.status(404);
+    throw new Error('Category not found');
+  }
+});
+
+export { getCategories, createCategory, deleteCategory };
