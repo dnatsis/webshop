@@ -6,7 +6,6 @@ import Message from '../components/Message';
 import Loader from '../components/Loader';
 import Paginate from '../components/Paginate';
 import { listCategories } from '../actions/categoryActions';
-import { PRODUCT_CREATE_RESET } from '../constants/productConstants';
 
 const CategoriesListScreen = ({ history, match }) => {
   const pageNumber = match.params.pageNumber || 1;
@@ -54,10 +53,8 @@ const CategoriesListScreen = ({ history, match }) => {
     */
   };
 
-  const createProductHandler = () => {
-    /* 
-    dispatch(createProduct());
-    */
+  const createCategoryHandler = () => {
+    history.push(`/admin/categorylist/create/newcategory`);
   };
 
   return (
@@ -67,7 +64,7 @@ const CategoriesListScreen = ({ history, match }) => {
           <h1>Categories</h1>
         </Col>
         <Col className="text-right">
-          <Button className="my-3" onClick={createProductHandler}>
+          <Button className="my-3" onClick={createCategoryHandler}>
             <i className="fas fa-plus"></i> Create Category
           </Button>
         </Col>

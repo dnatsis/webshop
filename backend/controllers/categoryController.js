@@ -27,9 +27,10 @@ const createCategory = asyncHandler(async (req, res) => {
     image: image,
   });
 
+  console.log(category);
   const createdCategory = await category.save();
 
-  res.json(createdCategory);
+  res.status(201).json(createdCategory);
 });
 
 export { getCategories, createCategory };

@@ -21,6 +21,7 @@ import OrderListScreen from './screens/OrderListScreen';
 import CategoriesScreen from './screens/CategoriesScreen';
 import CategoryScreen from './screens/CategoryScreen';
 import CategoriesListScreen from './screens/CategoriesListScreen';
+import CategoryCreateScreen from './screens/CategoryCreateScreen';
 
 function App() {
   return (
@@ -63,6 +64,11 @@ function App() {
           />
           <Route path="/admin/product/:id/edit" component={ProductEditScreen} />
           <Route path="/admin/orderlist" component={OrderListScreen} />
+          <Route
+            path="/admin/categorylist/create/newcategory"
+            component={CategoryCreateScreen}
+            exact
+          />
           <Route
             path="/admin/categorylist"
             component={CategoriesListScreen}
