@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: frontend/src/components/Message.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,41 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: frontend/src/components/Message.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from 'react';
+import { Alert } from 'react-bootstrap';
 
+/**
+ *
+ * @param {propType} variant a variant prop passed to decide which type of message to return
+ * @Component
+ * @example
+ * variant = danger
+ * variant = success
+ * @param {propType} children a children prop passed to the component which is displayed as a bootstrap alert
+ * @returns {Bootstrap:Alert} returns an alert which is used to display message in the application such as Errors or Successes
+ */
 
-    <h3> </h3>
+const Message = ({ variant, children }) => {
+  return &lt;Alert variant={variant}>{children}&lt;/Alert>;
+};
 
+Message.defaultProps = {
+  variant: 'info',
+};
 
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+export default Message;
+</code></pre>
+        </article>
+    </section>
 
 
 

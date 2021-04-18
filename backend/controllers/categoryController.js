@@ -1,9 +1,11 @@
 import asyncHandler from 'express-async-handler';
 import Category from '../models/categoriesModel.js';
 
-// @desc    Fetch all categories
-// @route    Get /api/categories
-// @access    Public
+/**
+ * Fetch all categories
+ * @route Get /api/categoriew
+ * @access Public
+ */
 const getCategories = asyncHandler(async (req, res) => {
   const pageSize = 10;
   const page = Number(req.query.pageNumber) || 1;

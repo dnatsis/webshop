@@ -10,7 +10,7 @@ import { logout } from '../actions/userActions';
  * Navbar Component using bootstrap
  *
  * @Component
- * @returns Bootstrap Navbar with LinkContainers for each link
+ * @returns  Bootstrap Navbar with LinkContainers for each link
  */
 
 const Header = () => {
@@ -19,7 +19,6 @@ const Header = () => {
   /**
    * Retrieve userLogin from Redux state
    * @param {state} state.userLogin gets the userLogin state from redux global state
-   * @return {state} userLogin state from redux into a const name userLogin
    */
 
   const userLogin = useSelector((state) => state.userLogin);

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: frontend/src/components/Loader.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,45 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: frontend/src/components/Loader.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from 'react';
+import { Spinner } from 'react-bootstrap';
 
+/**
+ * A Component using a boostrap spinner to use when part of the application is loading
+ *
+ * @Component
+ * @returns {Bootstrap:Spinner} a Bootstrap spinner used when part of the application is loading
+ */
+const Loader = () => {
+  return (
+    &lt;Spinner
+      animation="border"
+      role="status"
+      style={{
+        width: '100px',
+        height: '100px',
+        margin: 'auto',
+        display: 'block',
+      }}
+    >
+      &lt;span className="sr-only">Loading...&lt;/span>
+    &lt;/Spinner>
+  );
+};
 
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+export default Loader;
+</code></pre>
+        </article>
+    </section>
 
 
 

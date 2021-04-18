@@ -1,5 +1,13 @@
 import React from 'react';
 
+/**
+ * A Rating component that returns the correct number of stars based on a products rating
+ * @Component
+ * @param {Number} value the rating from 0-5 for a given product
+ * @param {Text} text text displayed under the starts, in this case the number of ratings
+ * @param {Text} color a color passed into the component which sets the color of the stars in the component
+ * @returns {} Number of stars to be displayed for a given products rating
+ */
 const Rating = ({ value, text, color }) => {
   return (
     <div className="rating">
@@ -68,6 +76,9 @@ const Rating = ({ value, text, color }) => {
   );
 };
 
+/**
+ * setting the default color of the color prop for when a color is not passed in
+ */
 Rating.defaultProps = {
   color: '#f8e825',
 };

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: frontend/src/components/Footer.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,39 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: frontend/src/components/Footer.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 
+/**
+ * Component for displaying the footer of the web application
+ * @returns copyright footer at the bottom of the web applications.
+ */
 
-    <h3> </h3>
+const Footer = () => {
+  return (
+    &lt;footer>
+      &lt;Container>
+        &lt;Row>
+          &lt;Col className="text-center py-3">Copyright &amp;copy; WebShop&lt;/Col>
+        &lt;/Row>
+      &lt;/Container>
+    &lt;/footer>
+  );
+};
 
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+export default Footer;
+</code></pre>
+        </article>
+    </section>
 
 
 

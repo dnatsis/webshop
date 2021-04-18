@@ -5,7 +5,7 @@ import { Card } from 'react-bootstrap';
 /**
  * Component for showing an individual category
  * @Component
- * @param {propType} category A category prop that is fetched from the backend
+ * @param {Object} category A category object that is fetched from the backend
  * @returns {Bootstrap:Card} returns a bootstrap card Component for whatever category is passed in
  */
 

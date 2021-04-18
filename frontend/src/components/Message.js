@@ -4,6 +4,7 @@ import { Alert } from 'react-bootstrap';
 /**
  *
  * @param {propType} variant a variant prop passed to decide which type of message to return
+ * @Component
  * @example
  * variant = danger
  * variant = success

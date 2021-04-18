@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: frontend/src/components/Product.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,57 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: frontend/src/components/Product.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from 'react';
+import { Link } from 'react-router-dom';
+import { Card } from 'react-bootstrap';
+import Rating from './Rating';
 
+/**
+ * Component for showing an individual product
+ * @Component
+ * @param {Object} product A product object that is fetched from the backend
+ * @returns {Bootstrap:Card} returns a bootstrap card Component for whatever product is passed in
+ */
+const Product = ({ product }) => {
+  return (
+    &lt;Card className="my-3 p-3 rounded">
+      &lt;Link to={`/product/${product._id}`}>
+        &lt;Card.Img src={product.image} variant="top" />
+      &lt;/Link>
 
-    <h3> </h3>
+      &lt;Card.Body>
+        &lt;Link to={`/product/${product._id}`}>
+          &lt;Card.Title as="div">
+            &lt;strong>{product.name}&lt;/strong>
+          &lt;/Card.Title>
+        &lt;/Link>
 
+        &lt;Card.Text as="div">
+          &lt;Rating
+            value={product.rating}
+            text={`${product.numReviews} reviews`}
+          />
+        &lt;/Card.Text>
 
+        &lt;Card.Text as="h3">${product.price}&lt;/Card.Text>
+      &lt;/Card.Body>
+    &lt;/Card>
+  );
+};
 
-
-
-
-
-
-
-
-    
-
-
-
-
-
+export default Product;
+</code></pre>
+        </article>
+    </section>
 
 
 

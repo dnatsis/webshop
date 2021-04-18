@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom';
 import { Card } from 'react-bootstrap';
 import Rating from './Rating';
 
+/**
+ * Component for showing an individual product
+ * @Component
+ * @param {Object} product A product object that is fetched from the backend
+ * @returns {Bootstrap:Card} returns a bootstrap card Component for whatever product is passed in
+ */
 const Product = ({ product }) => {
   return (
     <Card className="my-3 p-3 rounded">

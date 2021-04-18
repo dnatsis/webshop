@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: frontend/src/components/Category.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,48 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: frontend/src/components/Category.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from 'react';
+import { Link } from 'react-router-dom';
+import { Card } from 'react-bootstrap';
 
+/**
+ * Component for showing an individual category
+ * @Component
+ * @param {Object} category A category object that is fetched from the backend
+ * @returns {Bootstrap:Card} returns a bootstrap card Component for whatever category is passed in
+ */
 
-    <h3> </h3>
+const Category = ({ category }) => {
+  return (
+    &lt;Card className="my-3 p-3 rounded">
+      &lt;Link to={`/categories/${category.name}`}>
+        &lt;Card.Img src={category.image} variant="top" />
+      &lt;/Link>
 
+      &lt;Card.Body>
+        &lt;Link to={`/categories/${category.name}`}>
+          &lt;Card.Title as="div">
+            &lt;strong>{category.name}&lt;/strong>
+          &lt;/Card.Title>
+        &lt;/Link>
+      &lt;/Card.Body>
+    &lt;/Card>
+  );
+};
 
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+export default Category;
+</code></pre>
+        </article>
+    </section>
 
 
 
