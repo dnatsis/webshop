@@ -10,7 +10,7 @@
   <p align="center">
     A Full Stack ECommerce application built using the MERN Stack, Bootstrap and Redux
     <br />
-    <a href="https://github.com/dnatsis/webshop"><strong>Explore the docs »</strong></a>
+    <a href="https://dnatsis.github.io/webshop"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/dnatsis/webshop">View Demo</a>
