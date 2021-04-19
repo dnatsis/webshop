@@ -13,7 +13,7 @@
     <a href="https://dnatsis.github.io/webshop"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/dnatsis/webshop">View Demo</a>
+    <a href="https://webshop-dhimitrisapps.herokuapp.com/">View Demo</a>
     ·
     <a href="https://github.com/dnatsis/webshop/issues">Report Bug</a>
     ·
